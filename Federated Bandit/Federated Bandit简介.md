@@ -40,7 +40,7 @@
 
 ​	输入MAB连通图、时间T以及函数C(t)（C函数的构造方法详见论文中的推导过程），我们可以基于下述Gossip_UCB算法进行迭代。其中，集合N中的元素为当前agent的邻接结点，X表示agent自己拉动臂获得的reward，v表示经过通信之后更新的reward估值，通信时传递的信息也是v。在通信的过程中，邻接结点间共享第k个臂迄今为止拉动次数，并以此估计该臂全局最多的拉动次数，若自身对该臂拉动的次数落后了（文章设定的界限是N次，N即结点数，这样设置可以使每个agent对于第k臂的知识具有局部一致性），那么就把这个臂计入集合A并多加拉动。
 
-![Gossip_UCB](/Users/tt/Desktop/File/Bandit Attack/Federated Bandit/Gossip_UCB.png)
+![Gossip_UCB](https://github.com/Tongs2000/Bandits/blob/main/Federated%20Bandit/Fed_UCB.png?raw=true)
 
 #### （2）Fed_UCB
 
