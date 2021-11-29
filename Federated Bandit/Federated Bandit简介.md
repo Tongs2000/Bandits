@@ -32,11 +32,11 @@
 
 ​	文章给出了奖励X预测值的更新公式如下：
 
-![公式（2）](/Users/tt/Desktop/File/Bandit Attack/Federated Bandit/公式（2）.png)
+![公式（2）](https://github.com/Tongs2000/Bandits/blob/main/Federated%20Bandit/%E5%85%AC%E5%BC%8F%EF%BC%882%EF%BC%89.png?raw=true)
 
 ​	用于UCB算法步骤的函数C保留了经典UCB中的原始形式如下：
 
-![公式（11）](/Users/tt/Desktop/File/Bandit Attack/Federated Bandit/公式（11）.png)
+![公式（11）](https://github.com/Tongs2000/Bandits/blob/main/Federated%20Bandit/%E5%85%AC%E5%BC%8F%EF%BC%8811%EF%BC%89.png?raw=true)
 
 ​	输入MAB连通图、时间T以及函数C(t)（C函数的构造方法详见论文中的推导过程），我们可以基于下述Gossip_UCB算法进行迭代。其中，集合N中的元素为当前agent的邻接结点，X表示agent自己拉动臂获得的reward，v表示经过通信之后更新的reward估值，通信时传递的信息也是v。在通信的过程中，邻接结点间共享第k个臂迄今为止拉动次数，并以此估计该臂全局最多的拉动次数，若自身对该臂拉动的次数落后了（文章设定的界限是N次，N即结点数，这样设置可以使每个agent对于第k臂的知识具有局部一致性），那么就把这个臂计入集合A并多加拉动。
 
@@ -46,19 +46,19 @@
 
 ​	在Fed_UCB中，我们加入联邦学习的方法，先基于以下算法构造一个X的部分和的集合。每个部分和的求法见下述算法，简单来说就是把迄今为止得到的X观察值按顺序取……8个、4个、2个、1个分组并分别求和。
 
-![算法2](/Users/tt/Desktop/File/Bandit Attack/Federated Bandit/算法2.png)
+![算法2](https://github.com/Tongs2000/Bandits/blob/main/Federated%20Bandit/%E7%AE%97%E6%B3%952.png?raw=true)
 
 ​	得到部分和集合之后，我们基于以下算法对X进行重构，即添加拉普拉斯噪声。
 
-![算法3](/Users/tt/Desktop/File/Bandit Attack/Federated Bandit/算法3.png)
+![算法3](https://github.com/Tongs2000/Bandits/blob/main/Federated%20Bandit/%E7%AE%97%E6%B3%953.png?raw=true)
 
 ​	引入隐私保护后，C函数也必须得到修改。文章通过推导，得到新的C函数计算公式如下：
 
-![公式（12）](/Users/tt/Desktop/File/Bandit Attack/Federated Bandit/公式（12）.png)
+![公式（12）](https://github.com/Tongs2000/Bandits/blob/main/Federated%20Bandit/%E5%85%AC%E5%BC%8F%EF%BC%8812%EF%BC%89.png?raw=true)
 
 ​	完成前面的工作后，我们便可以修改Gossip_UCB得到Fed_UCB算法如下：
 
-![Fed_UCB](/Users/tt/Desktop/File/Bandit Attack/Federated Bandit/Fed_UCB.png)
+![Fed_UCB](https://github.com/Tongs2000/Bandits/blob/main/Federated%20Bandit/Fed_UCB.png?raw=true)
 
 
 
