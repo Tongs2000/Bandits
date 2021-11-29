@@ -60,5 +60,13 @@
 
 ![Fed_UCB](https://github.com/Tongs2000/Bandits/blob/main/Federated%20Bandit/Fed_UCB.png?raw=true)
 
+## 三、 参考
+
+1. [Federated Bandit: A Gossiping Approach](https://arxiv.org/abs/2010.12763v1)
+
+2. [差分隐私（一） Differential Privacy 简介](https://zhuanlan.zhihu.com/p/139114240)
+
+3. [联邦学习笔记整理（一）](https://blog.csdn.net/weixin_43893151/article/details/105077890?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_title~default-0.no_search_link&spm=1001.2101.3001.4242.1)
+
 
 
