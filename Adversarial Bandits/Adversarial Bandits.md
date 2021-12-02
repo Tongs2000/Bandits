@@ -1,0 +1,3 @@
+# Adversarial Bandits
+
+Stochastic Bandits的另一个变体被称为Adversarial Bandits，由Auer和Cesa-Bianchi（1998）首次提出。在这个变体中，在每个迭代中，代理人选择一个手臂，对手同时选择每个手臂的报酬结构。这是对强盗问题最有力的概括之一，因为它消除了所有的分布假设，对Adversarial Bandits的解决是对更具体的强盗问题的概括性解决。
