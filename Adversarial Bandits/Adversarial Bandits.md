@@ -24,6 +24,24 @@ For t in range(n):
 
 ![[]](./4.svg)
 
-如果我们考虑对称的问题, 将reward 改为 loss，那么此时,regret 定义为
+将其与Stochastic Bandits的regret对比，易知
 
-![[]](./5.svg)
+![[]](./6.png)
+
+​												左：Adversarial bandit 右：Stochastic bandit 不等式
+
+所以：Adversarial bandit的worst-case后悔以Stochastic bandit的worst-case后悔以为下界；将Adversarial bandit后悔界优化的算法也可以优化Stochastic bandit。
+
+## Exp3算法流程
+
+为Adversarial bandit设置的最标准算法是EXP3算法（**E**xponential-weight algorithm for**E**xploration and**E**xploitation）。
+
+算法的主要思路是从均匀分布开始, agent 维护一个![[公式]](./7.svg) 上的分布, agent 对arm 的评估蕴含在这个分布选择各个arm的概率中, 而这个概率随着每轮接受到的reward而更新。（总的来看，比Stochastic Bandits更有强化学习输出动作概率采样的感觉，而且这个算法也用到了importance sampling思想)
+
+![[]](./8.jpg)
+
+![[]](./9.jpg)
+
+![[]](./10.jpg)
+
+Exp3算法有着各种变体和优化过的样子，上方3张分别是原论文中两种算法流程以及英文wiki上Mult-arm Bandits关于Exp3算法的流程。
